@@ -135,6 +135,6 @@ dependencies {
 
     api 'com.google.android.play:feature-delivery:2.1.0'
 
-    implementation('com.tencent.tcmpp.android:mini_core_res:2.2.0-901-c14caef6-SNAPSHOT')
-    implementation('com.tencent.tcmpp.android:mini_extra_media_support_res:1.5.6-49-0663e8d5-SNAPSHOT')
+    implementation('com.tencent.tcmpp.android:mini_core_res:2.2.2-904-0be3777d-SNAPSHOT')
+    implementation('com.tencent.tcmpp.android:mini_extra_media_support_res:1.5.7-910-0be3777d-SNAPSHOT')
 }
