@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Assistant TCMPP</string>
+
+
+    <string name="common_lib_tips">Welcome to TCMPP</string>
+
+    <string name="applet_login_title">TCMPP</string>
+    <string name="applet_login_title_desc">A platform that takes your App to the next level</string>
+    <string name="applet_login_input_hint">Veuillez saisir le nom d\'utilisateur</string>
+    <string name="applet_login_confirm">Connexion</string>
+    <string name="applet_main_title">Assistant TCMPP</string>
+
+    <string name="applet_login_success">Connexion réussie</string>
+</resources>

@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.dynamic-feature'
+    id "org.jetbrains.kotlin.android" version "1.8.0"
+    id "org.jetbrains.kotlin.kapt" version "1.8.0"
+}
+
+apply from: '../deps.gradle'
+
+android {
+    namespace 'com.tencent.tcmpp.df'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        packagingOptions {
+            pickFirst 'lib/arm64-v8a/libc++_shared.so'
+            pickFirst 'lib/armeabi/libc++_shared.so'
+            pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+            pickFirst 'lib/arm64-v8a/libmarsxlog.so'
+            pickFirst 'lib/armeabi/libmarsxlog.so'
+            pickFirst 'lib/armeabi-v7a/libmarsxlog.so'
+            pickFirst 'lib/arm64-v8a/libv8jni.so'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation project(":app")
+    kapt project.ext.TCMPPDeps['mini_annotation_processor']
+    //gosn
+    implementation 'com.google.code.gson:gson:2.9.1'
+    // ok-http
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+
+    if (rootProject.ext.useOfflineSdks) {
+        implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/offline_sdks/tcmpp-mini-core")
+        implementation fileTree(include: ['*.jar', '*.aar'], dir: "${project.rootDir}/offline_sdks/tcmpp-tencent-map")
+        implementation "androidx.webkit:webkit:1.5.0"
+    } else {
+        // mini app start
+        implementation project.ext.TCMPPDeps['mini_core']
+
+        // qrcode support
+        implementation project.ext.TCMPPDeps['mini_extra_qrcode']
+
+        //google map  support
+        implementation project.ext.TCMPPDeps['mini_extra_google_map']
+
+        //live support
+        implementation project.ext.TCMPPDeps['mini_extra_trtc_live']
+        //nfc support
+        implementation project.ext.TCMPPDeps['mini_extra_nfc']
+        //lbs support
+        implementation project.ext.TCMPPDeps['mini_extra_lbs']
+        //bluetooth support
+        implementation project.ext.TCMPPDeps['mini_extra_bluetooth']
+        //contact support
+        implementation project.ext.TCMPPDeps['mini_extra_contact']
+        //Biometric support
+//        implementation project.ext.TCMPPDeps['mini_extra_soter']
+        //clipboard support
+        implementation project.ext.TCMPPDeps['mini_extra_clipboard']
+        //calendar support
+        implementation project.ext.TCMPPDeps['mini_extra_calendar']
+        //network support (tcp/udp/mdns)
+        implementation project.ext.TCMPPDeps['mini_extra_network']
+        //wifi support
+        implementation project.ext.TCMPPDeps['mini_extra_wifi']
+        //media support
+        implementation project.ext.TCMPPDeps['mini_extra_media_support']
+        //mini game
+        implementation project.ext.TCMPPDeps['mini_extra_mbengine']
+        //v8 engine
+//        implementation project.ext.TCMPPDeps['mini_extra_v8']
+    }
+}
