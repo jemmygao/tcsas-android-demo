@@ -76,6 +76,7 @@ dependencies {
         implementation project.ext.TCMPPDeps['mini_extra_media_support']
         //mini game
         implementation project.ext.TCMPPDeps['mini_extra_mbengine']
+        implementation project.ext.TCMPPDeps['mini_extra_admob']
         //v8 engine
 //        implementation project.ext.TCMPPDeps['mini_extra_v8']
     }
