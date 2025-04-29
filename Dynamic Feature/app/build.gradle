@@ -135,7 +135,7 @@ dependencies {
 
     api 'com.google.android.play:feature-delivery:2.1.0'
 
-    implementation('com.tencent.tcmpp.android:mini_core_res:2.2.2-923-9b3268da-SNAPSHOT')
-    implementation('com.tencent.tcmpp.android:mini_extra_media_support_res:1.5.7-910-0be3777d-SNAPSHOT')
+    implementation('com.tencent.tcmpp.android:mini_core_res:2.2.6')
+    implementation('com.tencent.tcmpp.android:mini_extra_media_support_res:1.5.9')
     api "com.google.android.gms:play-services-ads:23.0.0"
 }
