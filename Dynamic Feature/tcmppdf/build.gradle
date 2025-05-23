@@ -30,6 +30,12 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force project.ext.TCMPPDeps['mini_core']
+    }
+}
+
 dependencies {
     implementation project(":app")
     kapt project.ext.TCMPPDeps['mini_annotation_processor']

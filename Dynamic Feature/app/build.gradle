@@ -96,6 +96,12 @@ android {
     dynamicFeatures = [':tcmppdf']
 }
 
+configurations.all {
+    resolutionStrategy {
+        force project.ext.TCMPPDeps['mini_core']
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
     api 'androidx.appcompat:appcompat:1.6.1'
@@ -135,7 +141,7 @@ dependencies {
 
     api 'com.google.android.play:feature-delivery:2.1.0'
 
-    implementation('com.tencent.tcmpp.android:mini_core_res:2.2.6')
-    implementation('com.tencent.tcmpp.android:mini_extra_media_support_res:1.5.9')
+    implementation('com.tencent.tcmpp.android:mini_core_res:latest.release')
+    implementation('com.tencent.tcmpp.android:mini_extra_media_support_res:latest.release')
     api "com.google.android.gms:play-services-ads:23.0.0"
 }
