@@ -21,7 +21,9 @@
 #-renamesourcefileattribute SourceFile
 -keep class com.tencent.tcmpp.demo.open.** { *; }
 -keep class com.tencent.tmf.mini.api.bean.** { *; }
+-keep class fmtnimi.** { *; }
 -dontwarn com.tencent.tmfmini.sdk.manager.MiniLoadingAdManager$CheckLoadingAdLimitType
 -dontwarn org.brotli.dec.BrotliInputStream
 -dontwarn org.java_websocket.WebSocket
 -dontwarn org.java_websocket.server.WebSocketServer
+-dontwarn org.java_websocket.handshake.ClientHandshake
