@@ -4,18 +4,3 @@ plugins {
     id 'com.android.library' version '8.2.2' apply false
     id 'com.android.dynamic-feature' version '8.2.2' apply false
 }
-
-ext {
-    Properties localProperties = new Properties()
-    if (rootProject.file('local.properties').exists()) {
-        localProperties.load(rootProject.file('local.properties').newDataInputStream())
-    }
-
-    def isCi = (System.getenv('CI') != null && System.env.CI == "True")
-    if (isCi) {
-        localProperties.setProperty("tcmpp.useOfflineSdks", System.env.useOfflineSdks)
-        localProperties.store(rootProject.file('local.properties').newDataOutputStream(), null)
-    }
-
-    useOfflineSdks = localProperties.get("tcmpp.useOfflineSdks", false) == "true"
-}
